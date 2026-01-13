@@ -10,6 +10,16 @@ import { Step16Sugar } from './steps/Step16Sugar';
 import { Step17WaterIntake } from './steps/Step17WaterIntake';
 import { Step18Gender } from './steps/Step18Gender';
 import { Step19Loading } from './steps/Step19Loading';
+import { Step20SkinType } from './steps/Step20SkinType';
+import { Step21SkinConcerns } from './steps/Step21SkinConcerns';
+import { Step22ProgramAdjusted } from './steps/Step22ProgramAdjusted';
+import { Step23FaceShape } from './steps/Step23FaceShape';
+import { Step24MenstrualCycle } from './steps/Step24MenstrualCycle';
+import { Step25MentalHealth } from './steps/Step25MentalHealth';
+import { Step26TimeSpend } from './steps/Step26TimeSpend';
+import { Step27Interests } from './steps/Step27Interests';
+import { Step28GoodHands } from './steps/Step28GoodHands';
+import { Step29Experts } from './steps/Step29Experts';
 
 export function QuizContainer() {
   const { currentStep } = useQuiz();
@@ -48,7 +58,27 @@ export function QuizContainer() {
         return <Step18Gender />;
       case 19:
         return <Step19Loading />;
-      // Etapas 20+ serão adicionadas quando as imagens forem enviadas
+      case 20:
+        return <Step20SkinType />;
+      case 21:
+        return <Step21SkinConcerns />;
+      case 22:
+        return <Step22ProgramAdjusted />;
+      case 23:
+        return <Step23FaceShape />;
+      case 24:
+        return <Step24MenstrualCycle />;
+      case 25:
+        return <Step25MentalHealth />;
+      case 26:
+        return <Step26TimeSpend />;
+      case 27:
+        return <Step27Interests />;
+      case 28:
+        return <Step28GoodHands />;
+      case 29:
+        return <Step29Experts />;
+      // Etapas 30+ serão adicionadas
       default:
         return <Step1Age />;
     }
