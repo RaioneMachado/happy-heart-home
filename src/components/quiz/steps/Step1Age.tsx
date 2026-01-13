@@ -16,11 +16,12 @@ const ageOptions = [
 ];
 
 export function Step1Age() {
-  const { updateQuizData, nextStep } = useQuiz();
+  const { updateQuizData, setCurrentStep } = useQuiz();
 
   const handleSelect = (age: string) => {
     updateQuizData({ age });
-    nextStep();
+    // Pula direto para step 11 até que as etapas 2-10 sejam implementadas
+    setCurrentStep(11);
   };
 
   return (
