@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useQuiz } from '@/contexts/QuizContext';
 import { Step1Age } from './steps/Step1Age';
+import { StepPlaceholder } from './steps/StepPlaceholder';
 import { Step11SunSafety } from './steps/Step11SunSafety';
 import { Step12ProgramSmarter } from './steps/Step12ProgramSmarter';
 import { Step13Aesthetician } from './steps/Step13Aesthetician';
@@ -34,8 +35,24 @@ export function QuizContainer() {
     switch (currentStep) {
       case 1:
         return <Step1Age />;
-      // Etapas 2-10 serão adicionadas quando as imagens forem enviadas
-      // Por enquanto, Step1Age pula diretamente para Step11
+      case 2:
+        return <StepPlaceholder stepNumber={2} />;
+      case 3:
+        return <StepPlaceholder stepNumber={3} />;
+      case 4:
+        return <StepPlaceholder stepNumber={4} />;
+      case 5:
+        return <StepPlaceholder stepNumber={5} />;
+      case 6:
+        return <StepPlaceholder stepNumber={6} />;
+      case 7:
+        return <StepPlaceholder stepNumber={7} />;
+      case 8:
+        return <StepPlaceholder stepNumber={8} />;
+      case 9:
+        return <StepPlaceholder stepNumber={9} />;
+      case 10:
+        return <StepPlaceholder stepNumber={10} />;
       case 11:
         return <Step11SunSafety />;
       case 12:
