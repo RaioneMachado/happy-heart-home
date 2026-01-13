@@ -20,6 +20,12 @@ import { Step26TimeSpend } from './steps/Step26TimeSpend';
 import { Step27Interests } from './steps/Step27Interests';
 import { Step28GoodHands } from './steps/Step28GoodHands';
 import { Step29Experts } from './steps/Step29Experts';
+import { Step30Science } from './steps/Step30Science';
+import { Step31Loading } from './steps/Step31Loading';
+import { Step32Email } from './steps/Step32Email';
+import { Step33Newsletter } from './steps/Step33Newsletter';
+import { Step34NewYear } from './steps/Step34NewYear';
+import { Step35Pricing } from './steps/Step35Pricing';
 
 export function QuizContainer() {
   const { currentStep } = useQuiz();
@@ -29,17 +35,7 @@ export function QuizContainer() {
       case 1:
         return <Step1Age />;
       // Etapas 2-10 serão adicionadas quando as imagens forem enviadas
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-      case 7:
-      case 8:
-      case 9:
-      case 10:
-        // Placeholder - avança para step 11 por enquanto
-        return <Step11SunSafety />;
+      // Por enquanto, Step1Age pula diretamente para Step11
       case 11:
         return <Step11SunSafety />;
       case 12:
@@ -78,7 +74,18 @@ export function QuizContainer() {
         return <Step28GoodHands />;
       case 29:
         return <Step29Experts />;
-      // Etapas 30+ serão adicionadas
+      case 30:
+        return <Step30Science />;
+      case 31:
+        return <Step31Loading />;
+      case 32:
+        return <Step32Email />;
+      case 33:
+        return <Step33Newsletter />;
+      case 34:
+        return <Step34NewYear />;
+      case 35:
+        return <Step35Pricing />;
       default:
         return <Step1Age />;
     }
