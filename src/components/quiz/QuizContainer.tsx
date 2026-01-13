@@ -1,7 +1,15 @@
 import { AnimatePresence } from 'framer-motion';
 import { useQuiz } from '@/contexts/QuizContext';
 import { Step1Age } from './steps/Step1Age';
-import { StepPlaceholder } from './steps/StepPlaceholder';
+import { Step2MainGoal } from './steps/Step2MainGoal';
+import { Step3HeardAbout } from './steps/Step3HeardAbout';
+import { Step4WhatIsFaceYoga } from './steps/Step4WhatIsFaceYoga';
+import { Step5SkinSatisfaction } from './steps/Step5SkinSatisfaction';
+import { Step6ChooseFocus } from './steps/Step6ChooseFocus';
+import { Step7LuvlyBenefits } from './steps/Step7LuvlyBenefits';
+import { Step8FaceAreas } from './steps/Step8FaceAreas';
+import { Step9SkinRoutine } from './steps/Step9SkinRoutine';
+import { Step10CareProducts } from './steps/Step10CareProducts';
 import { Step11SunSafety } from './steps/Step11SunSafety';
 import { Step12ProgramSmarter } from './steps/Step12ProgramSmarter';
 import { Step13Aesthetician } from './steps/Step13Aesthetician';
@@ -36,23 +44,23 @@ export function QuizContainer() {
       case 1:
         return <Step1Age />;
       case 2:
-        return <StepPlaceholder stepNumber={2} />;
+        return <Step2MainGoal />;
       case 3:
-        return <StepPlaceholder stepNumber={3} />;
+        return <Step3HeardAbout />;
       case 4:
-        return <StepPlaceholder stepNumber={4} />;
+        return <Step4WhatIsFaceYoga />;
       case 5:
-        return <StepPlaceholder stepNumber={5} />;
+        return <Step5SkinSatisfaction />;
       case 6:
-        return <StepPlaceholder stepNumber={6} />;
+        return <Step6ChooseFocus />;
       case 7:
-        return <StepPlaceholder stepNumber={7} />;
+        return <Step7LuvlyBenefits />;
       case 8:
-        return <StepPlaceholder stepNumber={8} />;
+        return <Step8FaceAreas />;
       case 9:
-        return <StepPlaceholder stepNumber={9} />;
+        return <Step9SkinRoutine />;
       case 10:
-        return <StepPlaceholder stepNumber={10} />;
+        return <Step10CareProducts />;
       case 11:
         return <Step11SunSafety />;
       case 12:
