@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { ArrowLeft, Check } from 'lucide-react';
 import { useQuiz } from '@/contexts/QuizContext';
 
@@ -31,6 +30,7 @@ export function QuizHeader({
           <div className="w-9" />
         )}
         <h1 className="text-2xl font-semibold tracking-tight">•Luvly</h1>
+        {/* Removed hamburger menu - keeping empty div for layout balance */}
         <div className="w-9" />
       </div>
       
@@ -53,7 +53,7 @@ export function QuizHeader({
                 </div>
                 {index < totalProgressSteps - 1 && (
                   <div className={`
-                    w-16 h-0.5
+                    w-12 md:w-16 h-0.5
                     ${stepNum < currentProgressStep ? 'bg-primary' : 'bg-border'}
                   `} />
                 )}

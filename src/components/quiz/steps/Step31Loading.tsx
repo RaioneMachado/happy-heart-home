@@ -102,27 +102,27 @@ export function Step31Loading() {
     <div className="min-h-screen bg-background flex flex-col">
       <QuizHeader />
       
-      <div className="flex-1 flex flex-col items-center px-4 py-8">
+      <div className="flex-1 flex flex-col items-center px-4 py-6 md:py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="w-full max-w-md"
         >
-          <h1 className="text-2xl font-bold text-center text-foreground mb-2">
+          <h1 className="text-xl md:text-2xl font-bold text-center text-foreground mb-2">
             Verificando com perfis de
             <br />
             saúde semelhantes...
           </h1>
 
           {/* Loading steps */}
-          <div className="space-y-4 mb-8 mt-8">
+          <div className="space-y-3 md:space-y-4 mb-6 md:mb-8 mt-6 md:mt-8">
             {loadingSteps.map((step, index) => (
               <div key={step.key} className="space-y-1">
                 <div className="flex items-center justify-between">
-                  <span className={`text-sm ${currentStep >= index ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
+                  <span className={`text-xs md:text-sm ${currentStep >= index ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
                     {step.label}
                   </span>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-xs md:text-sm text-muted-foreground">
                     {stepProgress[index] >= 100 ? (
                       <Check className="w-4 h-4 text-primary" />
                     ) : (
@@ -143,7 +143,7 @@ export function Step31Loading() {
           </div>
 
           {/* Trust badge */}
-          <p className="text-center text-sm text-primary font-medium mb-6">
+          <p className="text-center text-xs md:text-sm text-primary font-medium mb-4 md:mb-6">
             Confiado por mais de 273.908 clientes
           </p>
 
@@ -154,14 +154,14 @@ export function Step31Loading() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="bg-card rounded-2xl p-6 shadow-lg"
+              className="bg-card rounded-2xl p-4 md:p-6 shadow-lg"
             >
               <div className="flex justify-center gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-center text-muted-foreground mb-4">
+              <p className="text-center text-sm md:text-base text-muted-foreground mb-4">
                 "{testimonials[testimonialIndex].text}"
               </p>
               <p className="text-center font-semibold text-foreground">
@@ -184,7 +184,7 @@ export function Step31Loading() {
         </motion.div>
       </div>
 
-      {/* Modal */}
+      {/* Modal - Responsive */}
       <AnimatePresence>
         {showModal && (
           <>
@@ -199,22 +199,22 @@ export function Step31Loading() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-sm px-4"
+              className="fixed inset-4 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-50 flex items-center justify-center md:w-full md:max-w-sm"
             >
-              <div className="bg-card rounded-2xl p-6 shadow-2xl">
-                <h2 className="text-xl font-bold text-center text-foreground mb-6">
+              <div className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl w-full max-w-sm mx-auto">
+                <h2 className="text-lg md:text-xl font-bold text-center text-foreground mb-6">
                   Você já experimentou yoga facial antes?
                 </h2>
                 <div className="space-y-3">
                   <button
                     onClick={() => handleModalAnswer(true)}
-                    className="w-full py-4 rounded-xl bg-muted hover:bg-muted/80 text-foreground font-medium transition-colors"
+                    className="w-full py-3 md:py-4 rounded-xl bg-muted hover:bg-muted/80 text-foreground font-medium transition-colors text-sm md:text-base"
                   >
                     Sim
                   </button>
                   <button
                     onClick={() => handleModalAnswer(false)}
-                    className="w-full py-4 rounded-xl bg-muted hover:bg-muted/80 text-foreground font-medium transition-colors"
+                    className="w-full py-3 md:py-4 rounded-xl bg-muted hover:bg-muted/80 text-foreground font-medium transition-colors text-sm md:text-base"
                   >
                     Não
                   </button>

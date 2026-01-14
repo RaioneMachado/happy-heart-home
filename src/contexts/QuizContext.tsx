@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 export interface QuizData {
   age?: string;
@@ -19,20 +19,29 @@ interface QuizContextType {
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
 export function QuizProvider({ children }: { children: ReactNode }) {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStepInternal] = useState(1);
   const [quizData, setQuizData] = useState<QuizData>({});
   const totalSteps = 35; // Ajustar conforme necessário
+
+  // Scroll to top whenever step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentStep]);
+
+  const setCurrentStep = (step: number) => {
+    setCurrentStepInternal(step);
+  };
 
   const updateQuizData = (data: Partial<QuizData>) => {
     setQuizData(prev => ({ ...prev, ...data }));
   };
 
   const nextStep = () => {
-    setCurrentStep(prev => Math.min(prev + 1, totalSteps));
+    setCurrentStepInternal(prev => Math.min(prev + 1, totalSteps));
   };
 
   const prevStep = () => {
-    setCurrentStep(prev => Math.max(prev - 1, 1));
+    setCurrentStepInternal(prev => Math.max(prev - 1, 1));
   };
 
   return (

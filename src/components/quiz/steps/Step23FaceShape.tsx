@@ -2,14 +2,14 @@ import { useQuiz } from '@/contexts/QuizContext';
 import { QuizHeader } from '../shared/QuizHeader';
 import { motion } from 'framer-motion';
 
-// Face shape types
+// Face shape types with labels
 const faceShapes = [
-  { value: 'oval', highlight: 'cheeks' },
-  { value: 'round', highlight: 'full' },
-  { value: 'square', highlight: 'jaw' },
-  { value: 'heart', highlight: 'forehead' },
-  { value: 'oblong', highlight: 'chin' },
-  { value: 'diamond', highlight: 'cheekbones' },
+  { value: 'oval', highlight: 'cheeks', label: 'Oval' },
+  { value: 'round', highlight: 'full', label: 'Redondo' },
+  { value: 'square', highlight: 'jaw', label: 'Quadrado' },
+  { value: 'heart', highlight: 'forehead', label: 'Coração' },
+  { value: 'oblong', highlight: 'chin', label: 'Oblongo' },
+  { value: 'diamond', highlight: 'cheekbones', label: 'Diamante' },
 ];
 
 function FaceShapeIcon({ highlight, selected }: { highlight: string; selected: boolean }) {
@@ -97,11 +97,12 @@ export function Step23FaceShape() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.05 }}
               onClick={() => handleSelect(shape.value)}
-              className="bg-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col items-center gap-2"
+              className="bg-card rounded-2xl p-3 md:p-4 shadow-sm hover:shadow-md transition-all flex flex-col items-center gap-2"
             >
-              <div className="w-16 h-20">
+              <div className="w-12 h-16 md:w-16 md:h-20">
                 <FaceShapeIcon highlight={shape.highlight} selected={false} />
               </div>
+              <span className="text-xs md:text-sm font-medium text-foreground">{shape.label}</span>
               <div className="w-5 h-5 rounded-full border-2 border-border" />
             </motion.button>
           ))}
