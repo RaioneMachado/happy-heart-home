@@ -22,7 +22,7 @@ export function Step33Newsletter() {
         >
           <h1 className="text-2xl font-bold text-foreground mb-8">
             Você quer receber emails com dicas de{' '}
-            <span className="text-primary">Yoga Facial</span> e atualizações do app Luvly?
+            <span className="text-primary">Yoga Facial</span> e atualizações do app Luvya?
           </h1>
 
           <button

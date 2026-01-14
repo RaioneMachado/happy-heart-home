@@ -8,17 +8,17 @@ import expertMarina from '@/assets/expert-marina.jpg';
 
 const experts = [
   {
-    name: 'Jillian Osborne',
+    name: 'Julia Orbes',
     image: expertJillian,
     description: 'Professora certificada de Yoga Facial com mais de 10 anos de experiência em fitness facial, pilates e pole fitness. Diretora de um clube de pilates facial.'
   },
   {
-    name: 'Irina Makarevich',
+    name: 'Itaiana Oliveira',
     image: expertIrina,
     description: 'Treinadora certificada de massagem facial anti-envelhecimento. Mais de 10 anos de experiência como especialista em liberação miofascial. Co-proprietária de um clube de neuro-fitness.'
   },
   {
-    name: 'Marina Vasilevskaya',
+    name: 'Marina Vasconcelos',
     image: expertMarina,
     description: 'Treinadora certificada de construção facial com mais de 12 anos de experiência. Especialista em neurologia funcional. Co-proprietária de um clube de neuro-fitness.'
   }
@@ -31,7 +31,7 @@ export function Step29Experts() {
     <div className="min-h-screen bg-secondary/30 flex flex-col">
       <header className="w-full bg-background sticky top-0 z-50">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-center">
-          <h1 className="text-2xl font-semibold tracking-tight">•Luvly</h1>
+          <h1 className="text-2xl font-semibold tracking-tight text-primary">•Luvya</h1>
         </div>
         <div className="w-full h-px bg-border" />
       </header>
@@ -50,7 +50,7 @@ export function Step29Experts() {
           animate={{ opacity: 1, y: 0 }}
           className="text-xl font-bold text-foreground text-center mb-8 max-w-sm"
         >
-          Os programas Luvly são desenvolvidos por
+          Os programas Luvya são desenvolvidos por
           cosmetologistas profissionais e especialistas
           em yoga facial
         </motion.h2>
