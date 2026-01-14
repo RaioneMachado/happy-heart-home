@@ -2,16 +2,34 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useQuiz } from '@/contexts/QuizContext';
 import { QuizHeader } from '../shared/QuizHeader';
+import { supabase } from '@/integrations/supabase/client';
 
 export function Step32Email() {
-  const { nextStep, updateQuizData } = useQuiz();
+  const { nextStep, updateQuizData, quizData } = useQuiz();
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = () => {
-    if (isValidEmail) {
+  const handleSubmit = async () => {
+    if (isValidEmail && !isSubmitting) {
+      setIsSubmitting(true);
+      
+      try {
+        // Send email to owner via edge function
+        await supabase.functions.invoke('send-email', {
+          body: { 
+            email, 
+            quizData: { ...quizData, email } 
+          }
+        });
+      } catch (error) {
+        console.error('Error sending email:', error);
+        // Continue even if email fails - don't block user
+      }
+      
       updateQuizData({ email });
+      setIsSubmitting(false);
       nextStep();
     }
   };
@@ -52,14 +70,14 @@ export function Step32Email() {
 
             <button
               onClick={handleSubmit}
-              disabled={!isValidEmail}
+              disabled={!isValidEmail || isSubmitting}
               className={`w-full py-4 rounded-full font-semibold text-white transition-all ${
-                isValidEmail
+                isValidEmail && !isSubmitting
                   ? 'quiz-gradient hover:opacity-90'
                   : 'bg-muted text-muted-foreground cursor-not-allowed'
               }`}
             >
-              Obter meu Plano
+              {isSubmitting ? 'Enviando...' : 'Obter meu Plano'}
             </button>
           </div>
         </motion.div>

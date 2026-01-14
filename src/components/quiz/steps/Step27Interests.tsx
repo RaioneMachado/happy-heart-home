@@ -3,37 +3,43 @@ import { useQuiz } from '@/contexts/QuizContext';
 import { QuizHeader } from '../shared/QuizHeader';
 import { ContinueButton } from '../shared/ContinueButton';
 import { motion } from 'framer-motion';
+import trackProgressImg from '@/assets/interest-track-progress.png';
+import checkProductsImg from '@/assets/interest-check-products.png';
+import beautyRoutineImg from '@/assets/interest-beauty-routine.png';
+import bodyCareImg from '@/assets/interest-body-care.png';
+import hairCareImg from '@/assets/interest-hair-care.png';
+import relaxationImg from '@/assets/interest-relaxation.png';
 
 const options = [
   { 
     label: 'Acompanhar o progresso da minha pele ao longo do tempo', 
     value: 'track_progress',
-    color: 'bg-pink-100'
+    image: trackProgressImg
   },
   { 
     label: 'Verificar se o produto não é prejudicial', 
     value: 'check_products',
-    color: 'bg-orange-100'
+    image: checkProductsImg
   },
   { 
     label: 'Montar uma rotina de beleza', 
     value: 'beauty_routine',
-    color: 'bg-green-100'
+    image: beautyRoutineImg
   },
   { 
     label: 'Cuidados corporais', 
     value: 'body_care',
-    color: 'bg-blue-100'
+    image: bodyCareImg
   },
   { 
     label: 'Cuidados com os cabelos', 
     value: 'hair_care',
-    color: 'bg-amber-100'
+    image: hairCareImg
   },
   { 
     label: 'Rituais de relaxamento', 
     value: 'relaxation',
-    color: 'bg-rose-100'
+    image: relaxationImg
   },
 ];
 
@@ -65,7 +71,7 @@ export function Step27Interests() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-6"
         >
-          <h2 className="text-xl font-bold text-foreground">
+          <h2 className="text-lg md:text-xl font-bold text-foreground">
             Além dos treinos de Yoga Facial
             <br />
             no seu plano, o que mais
@@ -83,16 +89,20 @@ export function Step27Interests() {
               transition={{ delay: index * 0.05 }}
               onClick={() => handleToggle(option.value)}
               className={`
-                relative rounded-2xl overflow-hidden h-32 transition-all duration-200
+                relative rounded-2xl overflow-hidden h-36 md:h-40 transition-all duration-200
                 ${selected.includes(option.value) 
                   ? 'ring-2 ring-primary' 
                   : 'hover:shadow-md'}
               `}
             >
-              <div className={`absolute inset-0 ${option.color}`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <img 
+                src={option.image} 
+                alt={option.label}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="relative h-full flex flex-col justify-end p-3">
-                <span className="text-sm font-medium text-foreground text-left">
+                <span className="text-xs md:text-sm font-medium text-white text-left leading-tight">
                   {option.label}
                 </span>
               </div>
