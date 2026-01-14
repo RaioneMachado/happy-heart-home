@@ -2,10 +2,16 @@ import { useEffect, useState } from 'react';
 import { useQuiz } from '@/contexts/QuizContext';
 import { motion } from 'framer-motion';
 import manBeforeAfter from '@/assets/man-before-after.png';
+import womanBeforeAfter from '@/assets/woman-before-after-comparison.jpg';
 
 export function Step19Loading() {
-  const { nextStep } = useQuiz();
+  const { nextStep, quizData } = useQuiz();
   const [progress, setProgress] = useState(0);
+
+  // Choose image based on gender
+  const beforeAfterImage = quizData.gender === 'male' ? manBeforeAfter : womanBeforeAfter;
+  const genderText = quizData.gender === 'male' ? 'bonito' : 'bonita';
+  const testimonialName = quizData.gender === 'male' ? 'Morice, 33 anos' : 'Maria, 35 anos';
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +32,7 @@ export function Step19Loading() {
     <div className="min-h-screen bg-secondary/30 flex flex-col">
       <header className="w-full bg-background sticky top-0 z-50">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-center">
-          <h1 className="text-2xl font-semibold tracking-tight">•Luvly</h1>
+          <h1 className="text-2xl font-semibold tracking-tight text-primary">•Luvya</h1>
         </div>
         <div className="w-full h-px bg-border" />
       </header>
@@ -38,7 +44,7 @@ export function Step19Loading() {
           className="text-center mb-8"
         >
           <h2 className="text-2xl font-bold text-foreground">
-            Você pode ficar bonito de novo!
+            Você pode ficar {genderText} de novo!
             <br />
             Você só precisa de <span className="text-primary">yoga facial</span>
           </h2>
@@ -51,7 +57,7 @@ export function Step19Loading() {
           className="relative mb-8 rounded-2xl overflow-hidden shadow-lg max-w-md w-full"
         >
           <img
-            src={manBeforeAfter}
+            src={beforeAfterImage}
             alt="Antes e depois"
             className="w-full h-auto"
           />
@@ -69,7 +75,7 @@ export function Step19Loading() {
             para o meu problema—e funciona! <span className="text-primary font-medium">Meu rosto agora parece pelo menos 5 anos mais jovem</span>, e eu me sinto muito mais confiante."
           </p>
           <p className="text-center text-muted-foreground mt-4 font-medium">
-            Morice, 33 anos
+            {testimonialName}
           </p>
         </motion.div>
         

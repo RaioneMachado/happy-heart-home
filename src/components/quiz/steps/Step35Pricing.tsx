@@ -34,14 +34,14 @@ const plans = [
 const features = [
   {
     title: 'Programa personalizado de yoga facial focado nas suas áreas problemáticas',
-    bg: 'bg-orange-50',
+    bg: 'bg-primary/5',
   },
   {
     title: 'Curso especializado de papada para maximizar seus resultados',
-    bg: 'bg-orange-100',
+    bg: 'bg-primary/10',
   },
   {
-    title: 'Curso de massagem Gua Sha dos especialistas Luvly',
+    title: 'Curso de massagem Gua Sha dos especialistas Luvya',
     bg: 'bg-green-50',
   },
   {
@@ -59,7 +59,7 @@ const howItWorks = [
   {
     icon: '📧',
     title: 'Compartilhe seus resultados',
-    description: 'Contate-nos aqui usando o mesmo email que você usou para sua compra. Anexe capturas de tela dos "Resultados Semanais dentro do Programa Completo" do seu app Luvly.',
+    description: 'Contate-nos aqui usando o mesmo email que você usou para sua compra. Anexe capturas de tela dos "Resultados Semanais dentro do Programa Completo" do seu app Luvya.',
   },
   {
     icon: '💰',
@@ -115,7 +115,7 @@ export function Step35Pricing() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-purple-600 to-purple-500 rounded-2xl p-4 mb-6 flex items-center gap-3"
+          className="quiz-gradient rounded-2xl p-4 mb-6 flex items-center gap-3"
         >
           <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
             💰
@@ -188,9 +188,9 @@ export function Step35Pricing() {
         </div>
 
         {/* Offer timer */}
-        <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-xl py-3 px-4 text-center mb-6">
+        <div className="quiz-gradient rounded-xl py-3 px-4 text-center mb-6">
           <p className="text-white font-medium">
-            A oferta de ANO NOVO termina em <span className="font-bold">{formatTime(timeLeft)}</span> min
+            A oferta especial termina em <span className="font-bold">{formatTime(timeLeft)}</span> min
           </p>
         </div>
 
@@ -242,7 +242,7 @@ export function Step35Pricing() {
         </button>
 
         {/* Refund guarantee */}
-        <div className="bg-gradient-to-r from-purple-600 to-purple-500 rounded-xl p-4 mb-8 flex items-center gap-3">
+        <div className="quiz-gradient rounded-xl p-4 mb-8 flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">
             💰
           </div>
@@ -254,9 +254,9 @@ export function Step35Pricing() {
         </div>
 
         {/* How it works section */}
-        <div className="bg-purple-50 rounded-2xl p-6 mb-8">
+        <div className="bg-primary/5 rounded-2xl p-6 mb-8">
           <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-            PROGRAMA LUVLY DE 4 SEMANAS
+            PROGRAMA LUVYA DE 4 SEMANAS
           </span>
           <h3 className="text-xl font-bold text-foreground mt-4 mb-2">Como funciona</h3>
           <p className="text-sm text-muted-foreground mb-6">
@@ -281,7 +281,7 @@ export function Step35Pricing() {
           </div>
 
           <p className="text-xs text-muted-foreground text-center mt-4">
-            Se quiser saber mais sobre o Programa Personalizado Luvly ou a promoção "Complete seu Programa de 4 Semanas e Receba Reembolso Total", 
+            Se quiser saber mais sobre o Programa Personalizado Luvya ou a promoção "Complete seu Programa de 4 Semanas e Receba Reembolso Total", 
             consulte nossos <span className="underline">Termos de Uso</span>.
           </p>
 

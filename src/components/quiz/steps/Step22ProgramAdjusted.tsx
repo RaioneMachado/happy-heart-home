@@ -56,7 +56,7 @@ export function Step22ProgramAdjusted() {
               </motion.div>
             </div>
             
-            {/* Com Luvly */}
+            {/* Com Luvya */}
             <div className="flex flex-col items-center">
               <motion.div
                 initial={{ height: 0 }}
@@ -67,14 +67,14 @@ export function Step22ProgramAdjusted() {
                 <span className="text-xs font-bold text-white">
                   COM
                   <br />
-                  •Luvly
+                  •Luvya
                 </span>
               </motion.div>
             </div>
           </div>
           
           <p className="text-xs text-muted-foreground text-center mt-4">
-            Baseado em um estudo de 12 semanas com usuários ativos do Luvly.
+            Baseado em um estudo de 12 semanas com usuários ativos do Luvya.
           </p>
         </motion.div>
       </div>

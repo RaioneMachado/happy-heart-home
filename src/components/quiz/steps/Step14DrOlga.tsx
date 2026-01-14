@@ -11,7 +11,7 @@ export function Step14DrOlga() {
     <div className="min-h-screen bg-secondary/30 flex flex-col">
       <header className="w-full bg-background sticky top-0 z-50">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-center">
-          <h1 className="text-2xl font-semibold tracking-tight">•Luvly</h1>
+          <h1 className="text-2xl font-semibold tracking-tight text-primary">•Luvya</h1>
         </div>
         <div className="w-full h-px bg-border" />
       </header>
@@ -32,7 +32,7 @@ export function Step14DrOlga() {
           <div className="absolute bottom-20 left-0 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
             <div className="flex items-center gap-1">
               <span className="font-semibold text-foreground">Dra. Olga Skydan</span>
-              <BadgeCheck className="w-5 h-5 text-blue-500 fill-blue-500" />
+              <BadgeCheck className="w-5 h-5 text-primary fill-primary" />
             </div>
             <p className="text-sm text-muted-foreground">Cosmetologista certificada</p>
           </div>
@@ -61,7 +61,7 @@ export function Step14DrOlga() {
           className="text-center max-w-md"
         >
           <p className="text-lg font-bold text-foreground">
-            Luvly foi criado em colaboração com
+            Luvya foi criado em colaboração com
             especialistas em beleza certificados,
             esteticistas e coaches de bem-estar
           </p>

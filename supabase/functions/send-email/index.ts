@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
@@ -10,10 +10,10 @@ const corsHeaders = {
 
 interface EmailRequest {
   email: string;
-  quizData?: Record<string, any>;
+  quizData: Record<string, unknown>;
 }
 
-const handler = async (req: Request): Promise<Response> => {
+serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -22,47 +22,50 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { email, quizData }: EmailRequest = await req.json();
 
-    // Send email notification to the owner using Resend API directly
+    if (!email) {
+      throw new Error("Email is required");
+    }
+
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${RESEND_API_KEY}`,
+        Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Luvly <onboarding@resend.dev>",
+        from: "Luvya <onboarding@resend.dev>",
         to: ["raionemachado20@gmail.com"],
-        subject: "Novo lead do Quiz Luvly!",
+        subject: "Novo lead do Quiz Luvya!",
         html: `
           <h1>Novo lead capturado!</h1>
           <p><strong>Email do usuário:</strong> ${email}</p>
           <h2>Dados do Quiz:</h2>
           <pre>${JSON.stringify(quizData, null, 2)}</pre>
-          <p>Este é um email automático gerado pelo Quiz Luvly.</p>
+          <p>Este é um email automático gerado pelo Quiz Luvya.</p>
         `,
       }),
     });
 
-    const data = await res.json();
-    console.log("Email sent successfully:", data);
+    if (!res.ok) {
+      const error = await res.text();
+      throw new Error(`Failed to send email: ${error}`);
+    }
 
-    return new Response(JSON.stringify({ success: true }), {
+    const data = await res.json();
+
+    return new Response(JSON.stringify(data), {
       status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        ...corsHeaders,
-      },
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-  } catch (error: any) {
-    console.error("Error in send-email function:", error);
+  } catch (error) {
+    console.error("Error sending email:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: errorMessage }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
   }
-};
-
-serve(handler);
+});

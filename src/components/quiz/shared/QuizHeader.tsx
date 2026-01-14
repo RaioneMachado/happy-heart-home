@@ -18,20 +18,16 @@ export function QuizHeader({
 
   return (
     <header className="w-full bg-background sticky top-0 z-50">
-      <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-center">
         {showBack && currentStep > 1 ? (
           <button 
             onClick={prevStep}
-            className="p-2 hover:bg-secondary rounded-lg transition-colors"
+            className="p-2 hover:bg-secondary rounded-lg transition-colors absolute left-4"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-        ) : (
-          <div className="w-9" />
-        )}
-        <h1 className="text-2xl font-semibold tracking-tight">•Luvly</h1>
-        {/* Removed hamburger menu - keeping empty div for layout balance */}
-        <div className="w-9" />
+        ) : null}
+        <h1 className="text-2xl font-semibold tracking-tight text-primary">•Luvya</h1>
       </div>
       
       {showProgress && (

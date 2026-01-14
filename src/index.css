@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Quiz Funnel Design System - Luvly Clone */
+/* Quiz Funnel Design System - Luvya */
 
 @layer base {
   :root {
@@ -15,31 +15,31 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 14 100% 57%;
+    --primary: 338 78% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
+    --secondary: 340 20% 96%;
     --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 96%;
+    --muted: 340 15% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 340 82% 52%;
+    --accent: 338 82% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 14 100% 57%;
+    --border: 340 10% 90%;
+    --input: 340 10% 90%;
+    --ring: 338 78% 55%;
 
     --radius: 1rem;
 
-    /* Custom Quiz Colors */
-    --quiz-gradient-start: 14 100% 60%;
-    --quiz-gradient-end: 340 82% 52%;
-    --quiz-card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
+    /* Custom Quiz Colors - Pink Theme */
+    --quiz-gradient-start: 338 82% 58%;
+    --quiz-gradient-end: 350 85% 45%;
+    --quiz-card-shadow: 0 4px 20px -4px hsl(338 78% 55% / 0.15);
     --quiz-text-dark: 0 0% 15%;
     --quiz-text-light: 0 0% 45%;
 
@@ -63,27 +63,27 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 14 100% 57%;
+    --primary: 338 78% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 340 10% 15%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 15%;
+    --muted: 340 10% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 340 82% 52%;
+    --accent: 338 82% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 14 100% 57%;
+    --border: 340 10% 20%;
+    --input: 340 10% 20%;
+    --ring: 338 78% 55%;
 
-    --quiz-gradient-start: 14 100% 60%;
-    --quiz-gradient-end: 340 82% 52%;
+    --quiz-gradient-start: 338 82% 58%;
+    --quiz-gradient-end: 350 85% 45%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

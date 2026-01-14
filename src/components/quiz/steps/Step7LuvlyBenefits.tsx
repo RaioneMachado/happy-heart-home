@@ -32,7 +32,7 @@ export function Step7LuvlyBenefits() {
           className="w-full max-w-md"
         >
           <h1 className="text-2xl font-bold text-center text-foreground mb-2">
-            Com Luvly todo <span className="text-primary">rosto envelhece</span>
+            Com Luvya todo <span className="text-primary">rosto envelhece</span>
             <br />
             <span className="text-primary">graciosamente</span>
           </h1>

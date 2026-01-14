@@ -10,7 +10,7 @@ export function Step12ProgramSmarter() {
     <div className="min-h-screen bg-secondary/30 flex flex-col">
       <header className="w-full bg-background sticky top-0 z-50">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-center">
-          <h1 className="text-2xl font-semibold tracking-tight">•Luvly</h1>
+          <h1 className="text-2xl font-semibold tracking-tight text-primary">•Luvya</h1>
         </div>
         <div className="w-full h-px bg-border" />
       </header>
