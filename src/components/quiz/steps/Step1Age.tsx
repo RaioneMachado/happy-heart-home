@@ -26,13 +26,15 @@ export function Step1Age() {
   return (
     <QuizLayout>
       <div className="flex-1 flex flex-col items-center px-4 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            Pareça mais jovem sem botox com
+        <div className="text-center mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+              Pareça mais jovem sem botox
+            </span>
             <br />
-            plano de yoga facial personalizado
+            com plano de yoga facial personalizado
           </h2>
-          <p className="text-lg text-muted-foreground mt-4">
+          <p className="text-lg text-muted-foreground mt-6">
             SELECIONE SUA <span className="font-bold text-foreground">IDADE</span>
           </p>
         </div>
@@ -63,14 +65,6 @@ export function Step1Age() {
             </motion.button>
           ))}
         </div>
-
-        <p className="text-sm text-muted-foreground mt-8 text-center">
-          Ao continuar, você concorda com:
-          <br />
-          <a href="#" className="underline hover:text-foreground">Termos de Uso</a>
-          {' | '}
-          <a href="#" className="underline hover:text-foreground">Política de Privacidade</a>
-        </p>
       </div>
     </QuizLayout>
   );
