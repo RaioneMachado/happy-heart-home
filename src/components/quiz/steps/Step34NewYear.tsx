@@ -6,7 +6,7 @@ export function Step34NewYear() {
 
   const handleContinue = () => {
     // Redireciona para o checkout
-    window.location.href = 'https://go.perfectpay.com.br/PPU38CQ6264';
+    window.location.href = 'https://go.perfectpay.com.br/PPU38CQ6429';
   };
 
   return (
