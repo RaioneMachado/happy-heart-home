@@ -42,30 +42,40 @@ export function Step6ChooseFocus() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
           className="w-full max-w-md"
         >
           <h1 className="text-2xl font-bold text-center text-foreground mb-8">
-            Escolha seu foco
+            Escolha seu <span className="text-primary">foco</span>
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-2">
-            {focusOptions.map((option, index) => (
-              <motion.button
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {focusOptions.map((option) => (
+              <button
                 key={option.value}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05 }}
                 onClick={() => toggleOption(option.value)}
-                className={`px-4 py-2 rounded-full border-2 transition-all ${
+                className={`px-5 py-3 rounded-full border-2 transition-all duration-300 font-medium shadow-md hover:shadow-lg ${
                   selected.includes(option.value)
-                    ? 'bg-blue-100 border-blue-300 text-blue-700'
-                    : 'bg-card border-border text-foreground hover:border-blue-200'
+                    ? 'bg-gradient-to-r from-pink-500 to-rose-500 border-transparent text-white shadow-lg'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-pink-300'
                 }`}
               >
                 {option.label}
-              </motion.button>
+              </button>
             ))}
           </div>
+
+          {selected.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mb-6"
+            >
+              <p className="text-gray-600">
+                <span className="font-bold text-pink-600">{selected.length}</span> opção{selected.length !== 1 ? 'es' : ''} selecionada{selected.length !== 1 ? 's' : ''}
+              </p>
+            </motion.div>
+          )}
         </motion.div>
       </div>
 
