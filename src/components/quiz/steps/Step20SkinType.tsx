@@ -1,6 +1,5 @@
 import { useQuiz } from '@/contexts/QuizContext';
 import { QuizHeader } from '../shared/QuizHeader';
-import { OptionCard } from '../shared/OptionCard';
 import { motion } from 'framer-motion';
 
 const options = [
@@ -19,32 +18,42 @@ export function Step20SkinType() {
   };
 
   return (
-    <div className="min-h-screen bg-secondary/30 flex flex-col">
-      <QuizHeader currentProgressStep={3} />
+    <div className="min-h-screen bg-background flex flex-col">
+      <QuizHeader showBack showProgress />
       
-      <div className="flex-1 flex flex-col items-center px-4 py-8 pb-24">
-        <motion.div 
+      <div className="flex-1 flex flex-col items-center px-4 py-8">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          transition={{ duration: 0.4 }}
+          className="w-full max-w-md"
         >
-          <h2 className="text-2xl font-bold text-foreground">
+          <h1 className="text-2xl font-bold text-center text-foreground mb-8">
             Como você descreveria
             <br />
-            sua pele?
-          </h2>
-        </motion.div>
+            sua <span className="text-primary">pele</span>?
+          </h1>
 
-        <div className="w-full max-w-md space-y-3">
-          {options.map((option, index) => (
-            <OptionCard
-              key={option.value}
-              label={option.label}
-              onClick={() => handleSelect(option.value)}
-              delay={index * 0.1}
-            />
-          ))}
-        </div>
+          <div className="space-y-4">
+            {options.map((option) => (
+              <button
+                key={option.value}
+                onClick={() => handleSelect(option.value)}
+                className="w-full p-5 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 text-left group relative overflow-hidden"
+              >
+                {/* Sombra rosa sutil no fundo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-rose-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Texto */}
+                <div className="relative z-10">
+                  <span className="font-semibold text-lg text-gray-800 group-hover:text-gray-900 transition-colors duration-300 leading-relaxed">
+                    {option.label}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );
