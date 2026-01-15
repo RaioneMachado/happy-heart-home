@@ -15,16 +15,19 @@ export function Step4WhatIsFaceYoga() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
           className="w-full max-w-md"
         >
-          <h1 className="text-2xl font-bold text-center text-foreground mb-2">
-            O que é <span className="text-primary">yoga facial</span>, afinal?
+          <h1 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-4">
+            O que é <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">yoga facial</span>, afinal?
           </h1>
           
-          <p className="text-center text-muted-foreground mb-8">
-            Yoga facial é uma forma simples e holística de manter sua pele suave, 
-            firme e radiante. Ajuda a melhorar o bem-estar facial geral e retarda os sinais de envelhecimento.
-          </p>
+          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-5 mb-8 border border-pink-100 shadow-sm">
+            <p className="text-center text-gray-700 leading-relaxed">
+              Yoga facial é uma forma simples e holística de manter sua pele suave, 
+              firme e radiante. Ajuda a melhorar o bem-estar facial geral e retarda os sinais de envelhecimento.
+            </p>
+          </div>
 
           <h2 className="text-xl font-bold text-center text-foreground mb-6">
             Como funciona?
@@ -32,61 +35,70 @@ export function Step4WhatIsFaceYoga() {
 
           <div className="space-y-4">
             {/* Targeted techniques */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="flex items-start gap-3"
-            >
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-4 h-4 text-primary" />
+            <div className="group">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center group-hover:from-pink-200 group-hover:to-rose-200 transition-all duration-300">
+                  <Check className="w-5 h-5 text-rose-600" />
+                </div>
+                <p className="text-gray-800 font-medium leading-relaxed">
+                  Usa <span className="font-bold text-rose-600">técnicas direcionadas</span> para seu rosto, pescoço e ombros
+                </p>
               </div>
-              <p className="text-foreground">
-                Usa <span className="font-bold">técnicas direcionadas</span> para seu rosto, pescoço e ombros
-              </p>
-            </motion.div>
+            </div>
 
             {/* Massage */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-start gap-3"
-            >
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-4 h-4 text-primary" />
+            <div className="group">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center group-hover:from-pink-200 group-hover:to-rose-200 transition-all duration-300">
+                  <Check className="w-5 h-5 text-rose-600" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-gray-800 font-bold text-lg mb-2">Massagem</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                      <span className="text-gray-600">estimula a circulação</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                      <span className="text-gray-600">melhora o fluxo linfático</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                      <span className="text-gray-600">libera a tensão</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <p className="text-foreground font-bold">Massagem</p>
-                <ul className="text-muted-foreground mt-1 space-y-1">
-                  <li>• estimula a circulação</li>
-                  <li>• melhora o fluxo linfático</li>
-                  <li>• libera a tensão</li>
-                </ul>
-              </div>
-            </motion.div>
+            </div>
 
             {/* Acupressure */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-start gap-3"
-            >
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-4 h-4 text-primary" />
+            <div className="group">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center group-hover:from-pink-200 group-hover:to-rose-200 transition-all duration-300">
+                  <Check className="w-5 h-5 text-rose-600" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-gray-800 font-medium leading-relaxed mb-2">
+                    <span className="font-bold text-rose-600">Acupressão</span> alivia o estresse e ajuda com
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                      <span className="text-gray-600">alívio de dores de cabeça</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                      <span className="text-gray-600">liberação dos seios nasais</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                      <span className="text-gray-600">sono melhor</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <p className="text-foreground">
-                  <span className="font-bold">Acupressão</span> alivia o estresse e ajuda com
-                </p>
-                <ul className="text-muted-foreground mt-1 space-y-1">
-                  <li>• alívio de dores de cabeça</li>
-                  <li>• liberação dos seios nasais</li>
-                  <li>• sono melhor</li>
-                </ul>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
