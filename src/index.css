@@ -116,3 +116,7 @@
     box-shadow: var(--quiz-card-shadow);
   }
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
