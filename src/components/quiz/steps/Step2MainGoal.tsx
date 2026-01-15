@@ -24,25 +24,35 @@ export function Step2MainGoal() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
           className="w-full max-w-md"
         >
           <h1 className="text-2xl font-bold text-center text-foreground mb-8">
             Qual é o seu <span className="text-primary">objetivo principal</span>?
           </h1>
 
-          <div className="space-y-3">
-            {options.map((option, index) => (
-              <motion.button
+          <div className="space-y-4">
+            {options.map((option) => (
+              <button
                 key={option.value}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
                 onClick={() => handleSelect(option.value)}
-                className="w-full p-4 rounded-2xl bg-card shadow-sm border border-border hover:border-primary/50 hover:shadow-md transition-all flex items-center gap-3 text-left"
+                className="w-full p-5 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-4 text-left group relative overflow-hidden"
               >
-                <span className="text-2xl">{option.emoji}</span>
-                <span className="font-medium text-foreground">{option.label}</span>
-              </motion.button>
+                {/* Sombra rosa sutil no fundo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-rose-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Container do emoji */}
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-pink-50 to-rose-50 group-hover:from-pink-100 group-hover:to-rose-100 transition-all duration-300">
+                  <span className="text-2xl">{option.emoji}</span>
+                </div>
+                
+                {/* Texto */}
+                <div className="relative z-10">
+                  <span className="font-semibold text-lg text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
+                    {option.label}
+                  </span>
+                </div>
+              </button>
             ))}
           </div>
         </motion.div>
