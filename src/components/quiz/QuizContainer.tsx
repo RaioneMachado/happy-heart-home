@@ -1,6 +1,6 @@
+import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useQuiz } from '@/contexts/QuizContext';
-import { ScrollToTop } from './ScrollToTop';
 import { Step1Age } from './steps/Step1Age';
 import { Step2MainGoal } from './steps/Step2MainGoal';
 import { Step3HeardAbout } from './steps/Step3HeardAbout';
@@ -39,6 +39,20 @@ import { Step35Pricing } from './steps/Step35Pricing';
 
 export function QuizContainer() {
   const { currentStep } = useQuiz();
+
+  useEffect(() => {
+    // Rola para o topo sempre que o step mudar
+    // Usamos setTimeout para garantir que o DOM foi atualizado
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [currentStep]);
 
   const renderStep = () => {
     switch (currentStep) {
@@ -118,13 +132,10 @@ export function QuizContainer() {
   };
 
   return (
-    <>
-      <ScrollToTop />
-      <AnimatePresence mode="wait">
-        <div key={currentStep}>
-          {renderStep()}
-        </div>
-      </AnimatePresence>
-    </>
+    <AnimatePresence mode="wait">
+      <div key={currentStep}>
+        {renderStep()}
+      </div>
+    </AnimatePresence>
   );
 }
