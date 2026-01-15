@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useQuiz } from '@/contexts/QuizContext';
 import { motion } from 'framer-motion';
-import manBeforeAfter from '@/assets/man-before-after.png';
-import womanBeforeAfter from '@/assets/woman-before-after-comparison.jpg';
+// Removi as importações das imagens antigas
+// import manBeforeAfter from '@/assets/man-before-after.png';
+// import womanBeforeAfter from '@/assets/woman-before-after-comparison.jpg';
 
 export function Step19Loading() {
   const { nextStep, quizData } = useQuiz();
   const [progress, setProgress] = useState(0);
 
-  // Choose image based on gender
-  const beforeAfterImage = quizData.gender === 'male' ? manBeforeAfter : womanBeforeAfter;
   const genderText = quizData.gender === 'male' ? 'bonito' : 'bonita';
   const testimonialName = quizData.gender === 'male' ? 'Morice, 33 anos' : 'Maria, 35 anos';
 
@@ -50,14 +49,15 @@ export function Step19Loading() {
           </h2>
         </motion.div>
         
-        {/* Before/After Image */}
+        {/* Before/After Image - AGORA COM CAMINHO DIRETO */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           className="relative mb-8 rounded-2xl overflow-hidden shadow-lg max-w-md w-full"
         >
+          {/* TROQUE AQUI O CAMINHO DA IMAGEM */}
           <img
-            src={beforeAfterImage}
+            src="./imagens/ANTES%20E%20DEPOIS/nome-da-imagem.jpg"
             alt="Antes e depois"
             className="w-full h-auto"
           />
