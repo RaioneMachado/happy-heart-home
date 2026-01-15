@@ -23,15 +23,25 @@ export function Step34NewYear() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-center"
+          className="text-center w-full max-w-md mx-auto flex flex-col items-center justify-center"
         >
-          {/* Gift box with glow */}
-          <div className="relative mb-8">
+          {/* Frases acima da imagem */}
+          <div className="mb-6">
+            <h1 className="text-3xl font-bold text-white mb-2">
+              Sua oferta
+            </h1>
+            <h2 className="text-3xl font-bold text-white">
+              está pronta!
+            </h2>
+          </div>
+
+          {/* Gift box with glow - Centralizado verticalmente */}
+          <div className="relative my-8 flex-1 flex items-center justify-center">
             <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl transform scale-150" />
             <motion.img
               src="/presente.png"
               alt="Presente"
-              className="w-48 h-48 mx-auto relative z-10 object-contain"
+              className="w-48 h-48 relative z-10 object-contain"
               animate={{ 
                 y: [0, -10, 0],
                 rotate: [-2, 2, -2],
@@ -44,22 +54,16 @@ export function Step34NewYear() {
             />
           </div>
 
-          <h1 className="text-3xl font-bold text-white mb-2">
-            Sua oferta
-          </h1>
-          <h2 className="text-3xl font-bold text-white">
-            está pronta!
-          </h2>
+          {/* Botão abaixo da imagem */}
+          <div className="mt-8 w-full px-4">
+            <button
+              onClick={handleContinue}
+              className="w-full py-4 rounded-full bg-white text-primary font-semibold hover:bg-white/90 transition-colors shadow-lg"
+            >
+              Continuar
+            </button>
+          </div>
         </motion.div>
-      </div>
-
-      <div className="p-4 pb-8 relative z-10">
-        <button
-          onClick={handleContinue}
-          className="w-full max-w-md mx-auto block py-4 rounded-full bg-white text-primary font-semibold hover:bg-white/90 transition-colors shadow-lg"
-        >
-          Continuar
-        </button>
       </div>
     </div>
   );
