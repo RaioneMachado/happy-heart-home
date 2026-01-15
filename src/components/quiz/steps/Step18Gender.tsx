@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { useQuiz } from '@/contexts/QuizContext';
 import { QuizHeader } from '../shared/QuizHeader';
-import { motion, AnimatePresence } from 'framer-motion';
-import womanBefore from '@/assets/woman-before-treatment.jpg';
-import womanAfter from '@/assets/woman-after-treatment.jpg';
+import { motion } from 'framer-motion';
 
 const options = [
   { label: 'Feminino', value: 'female' },
@@ -17,7 +15,7 @@ export function Step18Gender() {
   const handleSelect = (value: string) => {
     setSelected(value);
     updateQuizData({ gender: value });
-    // Auto advance after a short delay to show the image
+    // Auto advance after a short delay
     setTimeout(() => {
       nextStep();
     }, 1500);
@@ -56,41 +54,6 @@ export function Step18Gender() {
             </motion.button>
           ))}
         </div>
-
-        {/* Show woman before/after when female is selected */}
-        <AnimatePresence>
-          {selected === 'female' && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="mt-8 w-full max-w-md"
-            >
-              <div className="flex gap-4 justify-center">
-                <div className="text-center">
-                  <div className="rounded-xl overflow-hidden w-32 h-40 md:w-40 md:h-48">
-                    <img 
-                      src={womanBefore} 
-                      alt="Antes" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">Antes</p>
-                </div>
-                <div className="text-center">
-                  <div className="rounded-xl overflow-hidden w-32 h-40 md:w-40 md:h-48">
-                    <img 
-                      src={womanAfter} 
-                      alt="Depois" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">Depois</p>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );
