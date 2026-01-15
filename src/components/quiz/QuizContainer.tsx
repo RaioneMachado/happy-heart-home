@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import { useQuiz } from '@/contexts/QuizContext';
+import { ScrollToTop } from './ScrollToTop';
 import { Step1Age } from './steps/Step1Age';
 import { Step2MainGoal } from './steps/Step2MainGoal';
 import { Step3HeardAbout } from './steps/Step3HeardAbout';
@@ -117,10 +118,13 @@ export function QuizContainer() {
   };
 
   return (
-    <AnimatePresence mode="wait">
-      <div key={currentStep}>
-        {renderStep()}
-      </div>
-    </AnimatePresence>
+    <>
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <div key={currentStep}>
+          {renderStep()}
+        </div>
+      </AnimatePresence>
+    </>
   );
 }
