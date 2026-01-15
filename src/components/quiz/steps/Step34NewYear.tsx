@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useQuiz } from '@/contexts/QuizContext';
-import giftBox from '@/assets/gift-box-pink.png';
 
 export function Step34NewYear() {
   const { nextStep } = useQuiz();
@@ -25,7 +24,7 @@ export function Step34NewYear() {
           <div className="relative mb-8">
             <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl transform scale-150" />
             <motion.img
-              src={giftBox}
+              src="/presente.png"
               alt="Presente"
               className="w-48 h-48 mx-auto relative z-10 object-contain"
               animate={{ 
