@@ -4,6 +4,11 @@ import { useQuiz } from '@/contexts/QuizContext';
 export function Step34NewYear() {
   const { nextStep } = useQuiz();
 
+  const handleContinue = () => {
+    // Redireciona para o checkout
+    window.location.href = 'https://go.perfectpay.com.br/PPU38CQ6264';
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary to-primary/80 flex flex-col relative overflow-hidden">
       {/* Header */}
@@ -50,7 +55,7 @@ export function Step34NewYear() {
 
       <div className="p-4 pb-8 relative z-10">
         <button
-          onClick={nextStep}
+          onClick={handleContinue}
           className="w-full max-w-md mx-auto block py-4 rounded-full bg-white text-primary font-semibold hover:bg-white/90 transition-colors shadow-lg"
         >
           Continuar
