@@ -26,7 +26,12 @@ export function Step1Age() {
   return (
     <QuizLayout>
       <div className="flex-1 flex flex-col items-center px-4 py-8">
-        <div className="text-center mb-8 max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="text-center mb-8 max-w-2xl mx-auto"
+        >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
               Pareça mais jovem sem botox
@@ -37,15 +42,12 @@ export function Step1Age() {
           <p className="text-lg text-muted-foreground mt-6">
             SELECIONE SUA <span className="font-bold text-foreground">IDADE</span>
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-2 gap-4 max-w-md w-full">
-          {ageOptions.map((option, index) => (
-            <motion.button
+          {ageOptions.map((option) => (
+            <button
               key={option.value}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               onClick={() => handleSelect(option.value)}
               className="group relative overflow-hidden rounded-2xl bg-card shadow-lg hover:shadow-xl transition-all duration-300"
             >
@@ -62,7 +64,7 @@ export function Step1Age() {
                   <ChevronRight className="w-5 h-5" />
                 </div>
               </div>
-            </motion.button>
+            </button>
           ))}
         </div>
       </div>
