@@ -6,7 +6,7 @@ export function Step34NewYear() {
 
   const handleContinue = () => {
     // Redireciona para o checkout
-    window.location.href = 'https://go.perfectpay.com.br/PPU38CQ6429';
+    window.location.href = 'https://pay.kirvano.com/d4826781-bc3a-4799-8de8-9eae6bb14fed';
   };
 
   return (
