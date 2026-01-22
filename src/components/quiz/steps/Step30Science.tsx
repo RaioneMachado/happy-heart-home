@@ -65,7 +65,7 @@ export function Step30Science() {
                 <div className="absolute left-8 right-8 bottom-0 flex justify-between">
                   <span className="text-xs text-gray-500">Início</span>
                   <span className="text-xs text-gray-500">Tempo →</span>
-                  <span className="text-xs text-gray-500">20 semanas</span>
+                  <span className="text-xs text-gray-500">4 dias</span>
                 </div>
                 
                 <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-8">
