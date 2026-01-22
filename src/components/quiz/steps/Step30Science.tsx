@@ -116,7 +116,7 @@ export function Step30Science() {
                 <h3 className="font-bold text-gray-800 mb-2">Northwestern University</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   Dermatologistas relatam que yoga facial comprovadamente faz você parecer 
-                  <span className="font-bold text-green-600"> 3 anos mais jovem em 20 semanas</span>.
+                  <span className="font-bold text-green-600"> 3 anos mais jovem em 3 dias</span>.
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                   <span className="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">
