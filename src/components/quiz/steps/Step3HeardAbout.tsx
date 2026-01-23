@@ -38,20 +38,53 @@ export function Step3HeardAbout() {
               <button
                 key={option.value}
                 onClick={() => handleSelect(option.value)}
-                className="w-full p-5 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 text-left group relative overflow-hidden"
+                className="w-full p-5 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 text-left group relative overflow-hidden border border-gray-100 hover:border-pink-200"
               >
-                {/* Sombra rosa sutil no fundo */}
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-rose-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Sombra rosa mais visível no hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Indicador de seleção sutil */}
+                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full bg-pink-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Texto */}
-                <div className="relative z-10">
+                <div className="relative z-10 pl-4">
                   <span className="font-semibold text-lg text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
                     {option.label}
                   </span>
                 </div>
+
+                {/* Seta indicativa */}
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg 
+                    className="w-5 h-5 text-pink-400" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+
+                {/* Sombra rosa externa no hover */}
+                <div className="absolute inset-0 rounded-2xl shadow-[0_0_0_0_rgba(236,72,153,0)] group-hover:shadow-[0_0_0_3px_rgba(236,72,153,0.1)] transition-all duration-300"></div>
               </button>
             ))}
           </div>
+
+          {/* Instrução visual no rodapé */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-8 text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 border border-pink-100">
+              <div className="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></div>
+              <span className="text-sm text-pink-700 font-medium">
+                Selecione uma opção para continuar
+              </span>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </div>
