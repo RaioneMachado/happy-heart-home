@@ -43,17 +43,14 @@ export function Step3HeardAbout() {
                 {/* Sombra rosa mais visível no hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                {/* Indicador de seleção sutil */}
-                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full bg-pink-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
                 {/* Texto */}
-                <div className="relative z-10 pl-4">
+                <div className="relative z-10">
                   <span className="font-semibold text-lg text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
                     {option.label}
                   </span>
                 </div>
 
-                {/* Seta indicativa */}
+                {/* Seta indicativa - só aparece no hover */}
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <svg 
                     className="w-5 h-5 text-pink-400" 
